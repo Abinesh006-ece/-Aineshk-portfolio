@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abinesh K | ECE & IoT Portfolio</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            purple: '#7e22ce',
+                            pink: '#ec4899',
+                            blue: '#3b82f6',
+                            cyan: '#06b6d4',
+                            amber: '#f59e0b',
+                            emerald: '#10b981'
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'bounce-slow': 'bounce 2s infinite',
+                        'float': 'float 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(139, 92, 246, 0.3), 0 10px 10px -5px rgba(236, 72, 153, 0.2);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #ec4899, #8b5cf6);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="gradient-bg text-gray-100 font-sans min-h-screen relative overflow-x-hidden">
+
+    <!-- Glowing Background Lights -->
+    <div class="fixed -top-40 -left-40 w-96 h-96 bg-pink-600 rounded-full filter blur-[128px] opacity-30 pointer-events-none animate-pulse-slow"></div>
+    <div class="fixed top-1/2 -right-40 w-96 h-96 bg-purple-600 rounded-full filter blur-[128px] opacity-30 pointer-events-none animate-pulse-slow"></div>
+    <div class="fixed -bottom-40 left-1/3 w-96 h-96 bg-blue-600 rounded-full filter blur-[128px] opacity-30 pointer-events-none animate-pulse-slow"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold tracking-wider gradient-text hover:scale-105 transition-transform duration-300">
+                ABINESH K <span class="text-xs text-pink-400 font-normal">| ECE & IoT</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold">
+                <a href="#about" class="hover:text-pink-400 transition-colors duration-200">About</a>
+                <a href="#skills" class="hover:text-purple-400 transition-colors duration-200">Skills</a>
+                <a href="#projects" class="hover:text-blue-400 transition-colors duration-200">Projects</a>
+                <a href="#education" class="hover:text-cyan-400 transition-colors duration-200">Education & Exp</a>
+                <a href="#contact" class="hover:text-emerald-400 transition-colors duration-200">Contact</a>
+            </div>
+            <!-- Quick Action Button -->
+            <a href="mailto:abiabineshk4647@gmail.com" class="px-5 py-2 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full font-semibold text-xs uppercase tracking-wider hover:shadow-lg hover:shadow-pink-500/40 hover:scale-105 transition-all duration-300">
+                Hire Me <i class="fas fa-paper-plane ml-1"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen pt-28 pb-16 flex items-center justify-center relative px-6">
+        <div class="max-w-5xl mx-auto text-center" data-aos="zoom-in" data-aos-duration="1000">
+            <!-- Profile Photo Header -->
+            <div class="relative w-40 h-40 mx-auto mb-6 group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-slow"></div>
+                <img src="profile.png" alt="Abinesh K Professional Portrait" class="relative rounded-full w-40 h-40 object-cover border-4 border-slate-900 shadow-2xl">
+            </div>
+
+            <div class="inline-block px-4 py-1.5 rounded-full bg-slate-800/90 border border-purple-500/30 text-purple-300 text-xs font-semibold mb-6 animate-float shadow-lg shadow-purple-900/50">
+                ⚡ Electronics & Communication Engineering Enthusiast
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Hello, I'm <span class="gradient-text">Abinesh K</span>
+            </h1>
+            <p class="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto font-light leading-relaxed mb-10">
+                Diploma Holder (94.8%) & Current B.E ECE Student with hands-on passion for 
+                <span class="text-pink-400 font-semibold">Embedded Systems</span>, 
+                <span class="text-purple-400 font-semibold">AI Signal Processing</span>, 
+                <span class="text-blue-400 font-semibold">IoT Solutions</span>, and 
+                <span class="text-cyan-400 font-semibold">AutoCAD</span>.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#projects" class="px-8 py-3.5 bg-gradient-to-r from-pink-500 via-purple-600 to-blue-600 rounded-full font-bold text-sm tracking-wide shadow-lg shadow-purple-500/30 hover:scale-105 hover:shadow-purple-500/50 transition-all duration-300">
+                    <i class="fas fa-microchip mr-2"></i> Explore All Projects
+                </a>
+                <a href="https://www.linkedin.com/in/abinesh-k-232030389?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="px-8 py-3.5 bg-slate-800 border border-slate-700 hover:border-purple-500 rounded-full font-bold text-sm text-slate-200 hover:text-white hover:bg-slate-700/80 hover:scale-105 transition-all duration-300">
+                    <i class="fab fa-linkedin text-blue-400 mr-2"></i> LinkedIn Profile
+                </a>
+                <a href="tel:6383628239" class="px-8 py-3.5 bg-slate-800 border border-slate-700 hover:border-emerald-500 rounded-full font-bold text-sm text-slate-200 hover:text-white hover:bg-slate-700/80 hover:scale-105 transition-all duration-300">
+                    <i class="fas fa-phone-alt text-emerald-400 mr-2"></i> Call: 6383628239
+                </a>
+            </div>
+
+            <!-- Quick Info Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-left">
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-4 rounded-xl text-center card-hover">
+                    <div class="text-pink-400 text-2xl font-bold">94.8%</div>
+                    <div class="text-xs text-slate-400">Diploma Score</div>
+                </div>
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-4 rounded-xl text-center card-hover">
+                    <div class="text-purple-400 text-2xl font-bold">3+</div>
+                    <div class="text-xs text-slate-400">Core Hardware Projects</div>
+                </div>
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-4 rounded-xl text-center card-hover">
+                    <div class="text-blue-400 text-2xl font-bold">STM32 / ESP32</div>
+                    <div class="text-xs text-slate-400">Microcontrollers</div>
+                </div>
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700/50 p-4 rounded-xl text-center card-hover">
+                    <div class="text-emerald-400 text-2xl font-bold">Namakkal</div>
+                    <div class="text-xs text-slate-400">Tamil Nadu, India</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Summary / About Section -->
+    <section id="about" class="py-20 px-6 relative bg-slate-900/60 backdrop-blur-sm border-y border-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold gradient-text">Professional Summary</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-slate-800/90 to-purple-950/40 p-8 md:p-10 rounded-2xl border border-slate-700 shadow-2xl relative overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                <div class="absolute -right-10 -bottom-10 opacity-10 text-9xl text-purple-400 pointer-events-none">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <p class="text-lg text-slate-200 leading-relaxed">
+                    Dedicated and motivated <span class="text-pink-400 font-semibold">Electronics and Communication Engineering (ECE)</span> student with a strong foundation built through a Diploma in Computer Science (94.8%). Enthusiastic about combining software logic with hardware innovations in 
+                    <span class="text-purple-400 font-semibold">Embedded Systems</span>, <span class="text-blue-400 font-semibold">Electronics Semiconductors</span>, <span class="text-cyan-400 font-semibold">IoT Cloud Solutions</span>, and <span class="text-emerald-400 font-semibold">AutoCAD Design</span>. Eager to leverage practical internship experience and hands-on prototype building to drive tech solutions in the electronics industry.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold gradient-text">Technical Skills & Expertise</h2>
+                <p class="text-slate-400 mt-2 text-sm">Interactive skill matrix - Click on any card to view core details!</p>
+                <div class="w-20 h-1 bg-gradient-to-r from-pink-500 to-purple-600 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Skill 1 -->
+                <div onclick="openSkillModal('Embedded Systems', 'Proficient in embedded systems architecture, circuit prototyping, interrupt management, sensor integration, and real-time controller interaction.')" class="bg-slate-800/70 border border-pink-500/30 p-6 rounded-2xl card-hover cursor-pointer group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-pink-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Embedded Systems</h3>
+                    <p class="text-slate-400 text-sm">Embedded Fundamentals, Interrupts, Sensor Interfacing & Microcontroller Logic.</p>
+                    <span class="inline-block mt-4 text-xs font-semibold text-pink-400 group-hover:translate-x-1 transition-transform">Click for details &rarr;</span>
+                </div>
+
+                <!-- Skill 2 -->
+                <div onclick="openSkillModal('Microcontrollers', 'Hands-on experience coding & wiring Arduino UNO, ESP32 (Wi-Fi/BT), and working with STM32 NanoEdge AI kits.')" class="bg-slate-800/70 border border-purple-500/30 p-6 rounded-2xl card-hover cursor-pointer group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-purple-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-memory"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Microcontrollers</h3>
+                    <p class="text-slate-400 text-sm">Arduino UNO, ESP32, STM32 Platform & AI-powered Edge Hardware.</p>
+                    <span class="inline-block mt-4 text-xs font-semibold text-purple-400 group-hover:translate-x-1 transition-transform">Click for details &rarr;</span>
+                </div>
+
+                <!-- Skill 3 -->
+                <div onclick="openSkillModal('Internet of Things (IoT)', 'Connecting local sensor data with cloud platforms for real-time telemetry, automated power cutoff, and alert management.')" class="bg-slate-800/70 border border-blue-500/30 p-6 rounded-2xl card-hover cursor-pointer group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">IoT & Cloud</h3>
+                    <p class="text-slate-400 text-sm">Internet of Things, Sensor Telemetry, Cloud Database Sync & Remote Relays.</p>
+                    <span class="inline-block mt-4 text-xs font-semibold text-blue-400 group-hover:translate-x-1 transition-transform">Click for details &rarr;</span>
+                </div>
+
+                <!-- Skill 4 -->
+                <div onclick="openSkillModal('Electronics & Semiconductors', 'Solid understanding of diode/transistor operation, semiconductor materials, power switches, and circuit safety.')" class="bg-slate-800/70 border border-cyan-500/30 p-6 rounded-2xl card-hover cursor-pointer group" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-cyan-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Electronics & Semiconductors</h3>
+                    <p class="text-slate-400 text-sm">Electronics Fundamentals, Semiconductor Physics, Circuit Protection.</p>
+                    <span class="inline-block mt-4 text-xs font-semibold text-cyan-400 group-hover:translate-x-1 transition-transform">Click for details &rarr;</span>
+                </div>
+
+                <!-- Skill 5 -->
+                <div onclick="openSkillModal('Design & AutoCAD', 'Designing technical drawings, basic layout schematics, and mechanical/electronic enclosure drafts.')" class="bg-slate-800/70 border border-amber-500/30 p-6 rounded-2xl card-hover cursor-pointer group" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">AutoCAD & Technical Drawing</h3>
+                    <p class="text-slate-400 text-sm">AutoCAD Basics, 2D/3D Design Principles, Technical Schematics.</p>
+                    <span class="inline-block mt-4 text-xs font-semibold text-amber-400 group-hover:translate-x-1 transition-transform">Click for details &rarr;</span>
+                </div>
+
+                <!-- Skill 6 -->
+                <div onclick="openSkillModal('Programming Fundamentals', 'Strong programmatic logic gained from Diploma in Computer Science (C/C++ basics, Python fundamentals, logic building).')" class="bg-slate-800/70 border border-emerald-500/30 p-6 rounded-2xl card-hover cursor-pointer group" data-aos="fade-up" data-aos-delay="600">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-2xl mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Programming Fundamentals</h3>
+                    <p class="text-slate-400 text-sm">Logic Design, Algorithm Flow, Hardware Control Software.</p>
+                    <span class="inline-block mt-4 text-xs font-semibold text-emerald-400 group-hover:translate-x-1 transition-transform">Click for details &rarr;</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Showcase Section (Single Page - All Projects) -->
+    <section id="projects" class="py-20 px-6 relative bg-slate-900/80 backdrop-blur-md border-y border-slate-800">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="px-3 py-1 rounded-full bg-pink-500/20 text-pink-400 text-xs font-bold uppercase tracking-widest">Featured Works</span>
+                <h2 class="text-3xl md:text-5xl font-extrabold gradient-text mt-2">All Engineering Projects</h2>
+                <p class="text-slate-400 mt-2 text-sm">Click on any project card to open interactive full view with live simulation controls!</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Project 1 Card -->
+                <div onclick="openProjectModal('jamming')" class="bg-gradient-to-b from-slate-800 to-slate-900 border border-purple-500/30 rounded-2xl overflow-hidden card-hover cursor-pointer flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl font-bold group-hover:bg-purple-500 group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full text-xs font-semibold">AI & Wireless Security</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-purple-300 transition-colors">AI Based Wireless Jamming Detection</h3>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Moving Prototype for real-time detection of wireless jamming signals using signal analysis & alert generation on mobile platforms.
+                        </p>
+                    </div>
+                    <div class="p-6 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center">
+                        <span class="text-xs text-purple-400 font-semibold flex items-center">
+                            <i class="fas fa-play-circle mr-1.5"></i> Interactive Simulation
+                        </span>
+                        <span class="text-xs text-slate-300 font-bold group-hover:translate-x-1 transition-transform">
+                            View Project <i class="fas fa-arrow-right ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 2 Card -->
+                <div onclick="openProjectModal('transformer')" class="bg-gradient-to-b from-slate-800 to-slate-900 border border-blue-500/30 rounded-2xl overflow-hidden card-hover cursor-pointer flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl font-bold group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-xs font-semibold">IoT & Cloud Power</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-blue-300 transition-colors">Transformer Monitoring & Automation</h3>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Measure transformer parameters & transmit real-time data to a cloud database with automated fault detection & trip disconnect.
+                        </p>
+                    </div>
+                    <div class="p-6 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center">
+                        <span class="text-xs text-blue-400 font-semibold flex items-center">
+                            <i class="fas fa-play-circle mr-1.5"></i> Interactive Simulation
+                        </span>
+                        <span class="text-xs text-slate-300 font-bold group-hover:translate-x-1 transition-transform">
+                            View Project <i class="fas fa-arrow-right ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 3 Card -->
+                <div onclick="openProjectModal('lorry')" class="bg-gradient-to-b from-slate-800 to-slate-900 border border-amber-500/30 rounded-2xl overflow-hidden card-hover cursor-pointer flex flex-col justify-between group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl font-bold group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                                <i class="fas fa-truck-loading"></i>
+                            </div>
+                            <span class="px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 rounded-full text-xs font-semibold">Sensor System</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white group-hover:text-amber-300 transition-colors">Lorry Load Limit Control System</h3>
+                        <p class="text-slate-400 text-sm mt-3 leading-relaxed">
+                            Monitors goods weight using load cell sensors, displays current weight vs preset limits, and triggers alarms to prevent overloading.
+                        </p>
+                    </div>
+                    <div class="p-6 bg-slate-900/60 border-t border-slate-800 flex justify-between items-center">
+                        <span class="text-xs text-amber-400 font-semibold flex items-center">
+                            <i class="fas fa-play-circle mr-1.5"></i> Interactive Simulation
+                        </span>
+                        <span class="text-xs text-slate-300 font-bold group-hover:translate-x-1 transition-transform">
+                            View Project <i class="fas fa-arrow-right ml-1"></i>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Timeline -->
+    <section id="education" class="py-20 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <!-- Education Side -->
+                <div data-aos="fade-right">
+                    <div class="flex items-center space-x-3 mb-8">
+                        <div class="w-10 h-10 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center text-lg">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white">Education</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Edu 1 -->
+                        <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-pink-500/50 transition-colors">
+                            <span class="px-3 py-1 bg-pink-500/20 text-pink-300 rounded-full text-xs font-semibold">2024 - 2027</span>
+                            <h3 class="text-lg font-bold text-white mt-3">B.E in Electronics & Communication Engineering</h3>
+                            <p class="text-purple-300 text-sm font-medium">Government College of Engineering, Salem-11</p>
+                            <p class="text-slate-400 text-xs mt-2">Pursuing advanced concepts in Signal Processing, Semiconductors, Embedded Systems, and Communication Systems.</p>
+                        </div>
+
+                        <!-- Edu 2 -->
+                        <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-purple-500/50 transition-colors">
+                            <div class="flex justify-between items-center">
+                                <span class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-semibold">March 2023</span>
+                                <span class="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-xs font-bold">94.8% Score</span>
+                            </div>
+                            <h3 class="text-lg font-bold text-white mt-3">Diploma in Computer Science</h3>
+                            <p class="text-purple-300 text-sm font-medium">Muthayammal Polytechnic College, Namakkal (637001)</p>
+                            <p class="text-slate-400 text-xs mt-2">Graduated with distinction. Gained strong fundamentals in programming, computer networks, and logic design.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience & Workshops Side -->
+                <div data-aos="fade-left">
+                    <div class="flex items-center space-x-3 mb-8">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-lg">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-white">Experience & Workshops</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <!-- Exp 1 -->
+                        <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-blue-500/50 transition-colors">
+                            <span class="px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full text-xs font-semibold">Student Intern</span>
+                            <h3 class="text-lg font-bold text-white mt-3">Embedded System Internship Program</h3>
+                            <p class="text-blue-300 text-sm font-medium">Emglitz Technologies, Salem, India</p>
+                            <p class="text-slate-400 text-xs mt-2">Completed practical hands-on training in Embedded Systems programming, hardware debugging, and real-time sensor integration.</p>
+                        </div>
+
+                        <!-- Exp 2 -->
+                        <div class="bg-slate-800/60 border border-slate-700/60 p-6 rounded-2xl hover:border-cyan-500/50 transition-colors">
+                            <span class="px-3 py-1 bg-cyan-500/20 text-cyan-300 rounded-full text-xs font-semibold">Workshop Participant</span>
+                            <h3 class="text-lg font-bold text-white mt-3">Smart Embedded Systems: AI Powered Solutions</h3>
+                            <p class="text-cyan-300 text-sm font-medium">COMPCOM 2025 @ GCE Salem</p>
+                            <p class="text-slate-400 text-xs mt-2">Attended hands-on workshop focused on STM32 Microcontrollers and NanoEdge AI machine learning at the edge.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Connect Section -->
+    <section id="contact" class="py-20 px-6 relative bg-slate-900/90 border-t border-slate-800">
+        <div class="max-w-4xl mx-auto text-center" data-aos="zoom-in">
+            <h2 class="text-3xl md:text-5xl font-extrabold gradient-text mb-4">Let's Connect & Collaborate!</h2>
+            <p class="text-slate-300 text-base max-w-xl mx-auto mb-10">
+                Interested in working together on Embedded Hardware, IoT devices, or Electronics design? Feel free to reach out directly.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left mb-12">
+                <a href="mailto:abiabineshk4647@gmail.com" class="p-6 bg-slate-800/80 border border-slate-700 rounded-2xl card-hover flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-pink-500/20 text-pink-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="overflow-hidden">
+                        <div class="text-xs text-slate-400 font-semibold">Email Me</div>
+                        <div class="text-sm font-bold text-white truncate">abiabineshk4647@gmail.com</div>
+                    </div>
+                </a>
+
+                <a href="tel:6383628239" class="p-6 bg-slate-800/80 border border-slate-700 rounded-2xl card-hover flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400 font-semibold">Call / WhatsApp</div>
+                        <div class="text-sm font-bold text-white">6383628239</div>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/abinesh-k-232030389?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="p-6 bg-slate-800/80 border border-slate-700 rounded-2xl card-hover flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400 font-semibold">LinkedIn Profile</div>
+                        <div class="text-sm font-bold text-white">abinesh-k-232030389</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Footer Note -->
+            <div class="border-t border-slate-800 pt-8 text-xs text-slate-500 flex flex-col md:flex-row justify-between items-center">
+                <span>© 2026 Abinesh K. All rights reserved. Namakkal, Tamil Nadu.</span>
+                <span class="mt-2 md:mt-0">Designed with <i class="fas fa-heart text-pink-500"></i> for Electronics & IoT Engineering</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Universal Modal (Project & Skill Popups) -->
+    <div id="interactiveModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300 px-4">
+        <div class="bg-slate-900 border border-purple-500/40 w-full max-w-2xl rounded-3xl p-6 md:p-8 relative shadow-2xl transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto" id="modalContainer">
+            
+            <button onclick="closeModal()" class="absolute top-5 right-5 w-10 h-10 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div id="modalBody">
+                <!-- Content dynamically populated via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts for AOS and Modal Logic -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        const projectsData = {
+            'jamming': {
+                title: 'AI Based Wireless Jamming Detection — Moving Prototype',
+                category: 'AI & Signal Processing',
+                icon: 'fa-shield-alt',
+                color: 'purple',
+                description: 'Built an AI-based prototype for real-time detection of wireless jamming signals using signal analysis techniques. Demonstrated interference detection and alert generation on a moving platform to enhance wireless communication security.',
+                techStack: ['AI Signal Analysis', 'RF Frequency Monitoring', 'Embedded C/C++', 'Arduino/ESP32', 'Moving Platform Chassis'],
+                simulation: `
+                    <div class="bg-slate-950 p-5 rounded-2xl border border-purple-500/30 mt-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-bold text-purple-400 uppercase tracking-wide">Live Signal Jamming Simulator</span>
+                            <span id="jamStatus" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400">Signal Clean</span>
+                        </div>
+                        <div class="h-24 bg-slate-900 rounded-xl flex items-center justify-center overflow-hidden relative border border-slate-800">
+                            <div id="signalWave" class="w-full flex justify-around items-end h-16 px-4">
+                                <div class="w-2 bg-purple-500 h-8 animate-pulse"></div>
+                                <div class="w-2 bg-purple-500 h-12 animate-pulse"></div>
+                                <div class="w-2 bg-purple-500 h-6 animate-pulse"></div>
+                                <div class="w-2 bg-purple-500 h-14 animate-pulse"></div>
+                                <div class="w-2 bg-purple-500 h-10 animate-pulse"></div>
+                                <div class="w-2 bg-purple-500 h-7 animate-pulse"></div>
+                            </div>
+                        </div>
+                        <button onclick="toggleJamming()" id="jamBtn" class="w-full mt-4 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all">
+                            Simulate RF Jamming Attack ⚡
+                        </button>
+                    </div>
+                `
+            },
+            'transformer': {
+                title: 'Transformer Monitoring Management & Automation',
+                category: 'IoT Cloud Automation',
+                icon: 'fa-bolt',
+                color: 'blue',
+                description: 'Measures key transformer parameters (temperature, voltage, current) and transmits real-time data to a cloud database for continuous remote monitoring. Features automated circuit breaker trip to disconnect power supply immediately upon fault detection.',
+                techStack: ['IoT ESP32', 'Cloud Database', 'Relay Power Disconnect', 'Voltage/Current Sensors', 'Auto Overload Alarm'],
+                simulation: `
+                    <div class="bg-slate-950 p-5 rounded-2xl border border-blue-500/30 mt-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-bold text-blue-400 uppercase tracking-wide">Transformer Grid Controller</span>
+                            <span id="transPowerStatus" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-400">Grid Connected 230V</span>
+                        </div>
+                        <div class="grid grid-cols-2 gap-3 mb-4">
+                            <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
+                                <div class="text-xs text-slate-400">Temp</div>
+                                <div id="tempVal" class="text-lg font-bold text-white">45°C</div>
+                            </div>
+                            <div class="bg-slate-900 p-3 rounded-xl border border-slate-800">
+                                <div class="text-xs text-slate-400">Cloud Sync</div>
+                                <div id="cloudStatus" class="text-lg font-bold text-emerald-400">ONLINE</div>
+                            </div>
+                        </div>
+                        <button onclick="simulateTransformerFault()" class="w-full py-2.5 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white rounded-xl text-xs font-bold uppercase tracking-wider transition-all">
+                            Simulate Over-Temperature Fault ⚠️
+                        </button>
+                    </div>
+                `
+            },
+            'lorry': {
+                title: 'Lorry Load Limit Control System',
+                category: 'Sensor & Safety Automation',
+                icon: 'fa-truck-loading',
+                color: 'amber',
+                description: 'Monitors the exact weight of goods loaded onto a lorry using a load cell sensor. Displays current load vs preset threshold limit and triggers a loud warning alarm if limit is exceeded to ensure road safety.',
+                techStack: ['Load Cell Sensor', 'HX711 Amplifier Module', 'Arduino Microcontroller', 'LCD / LED Display', 'Overload Buzzer'],
+                simulation: `
+                    <div class="bg-slate-950 p-5 rounded-2xl border border-amber-500/30 mt-4">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xs font-bold text-amber-400 uppercase tracking-wide">Vehicle Weight Monitor</span>
+                            <span id="lorryStatus" class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400">Safe Weight</span>
+                        </div>
+                        <div class="mb-4">
+                            <div class="flex justify-between text-xs text-slate-400 mb-1">
+                                <span>Current Weight: <strong id="weightVal" class="text-white">12 Tons</strong></span>
+                                <span>Max Limit: <strong>20 Tons</strong></span>
+                            </div>
+                            <div class="w-full h-4 bg-slate-900 rounded-full overflow-hidden p-0.5 border border-slate-800">
+                                <div id="weightBar" class="h-full bg-emerald-500 rounded-full transition-all duration-500" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="flex gap-2">
+                            <button onclick="addWeight(5)" class="flex-1 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-xl text-xs font-bold">
+                                + 5 Tons Load
+                            </button>
+                            <button onclick="resetWeight()" class="flex-1 py-2 bg-amber-600/30 hover:bg-amber-600/50 text-amber-300 rounded-xl text-xs font-bold">
+                                Reset Load
+                            </button>
+                        </div>
+                    </div>
+                `
+            }
+        };
+
+        function openProjectModal(key) {
+            const p = projectsData[key];
+            const modal = document.getElementById('interactiveModal');
+            const container = document.getElementById('modalContainer');
+            const body = document.getElementById('modalBody');
+
+            let techBadges = p.techStack.map(t => `<span class="px-2.5 py-1 bg-slate-800 border border-slate-700 rounded-lg text-xs font-medium text-slate-300">${t}</span>`).join(' ');
+
+            body.innerHTML = `
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-12 h-12 rounded-2xl bg-${p.color}-500/20 text-${p.color}-400 flex items-center justify-center text-xl shrink-0">
+                        <i class="fas ${p.icon}"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-${p.color}-400 uppercase tracking-widest">${p.category}</span>
+                        <h3 class="text-2xl font-bold text-white leading-tight">${p.title}</h3>
+                    </div>
+                </div>
+                <p class="text-slate-300 text-sm leading-relaxed mb-4">${p.description}</p>
+                <div class="mb-4">
+                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Technologies Used:</h4>
+                    <div class="flex flex-wrap gap-2">${techBadges}</div>
+                </div>
+                ${p.simulation}
+            `;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                container.classList.remove('scale-95');
+                container.classList.add('scale-100');
+            }, 10);
+        }
+
+        function openSkillModal(title, desc) {
+            const modal = document.getElementById('interactiveModal');
+            const container = document.getElementById('modalContainer');
+            const body = document.getElementById('modalBody');
+
+            body.innerHTML = `
+                <div class="text-center py-4">
+                    <div class="w-16 h-16 rounded-2xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-3xl mx-auto mb-4">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">${title}</h3>
+                    <p class="text-slate-300 text-sm leading-relaxed max-w-md mx-auto">${desc}</p>
+                    <button onclick="closeModal()" class="mt-6 px-6 py-2.5 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full text-xs font-bold text-white uppercase tracking-wider hover:scale-105 transition-transform">
+                        Got it!
+                    </button>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                container.classList.remove('scale-95');
+                container.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('interactiveModal');
+            const container = document.getElementById('modalContainer');
+            container.classList.remove('scale-100');
+            container.classList.add('scale-95');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        /* Simulation Handlers */
+        let isJamming = false;
+        function toggleJamming() {
+            isJamming = !isJamming;
+            const status = document.getElementById('jamStatus');
+            const btn = document.getElementById('jamBtn');
+            const wave = document.getElementById('signalWave');
+
+            if (isJamming) {
+                status.className = "px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-500/20 text-red-400 animate-pulse";
+                status.innerText = "🚨 JAMMING INTERFERENCE DETECTED!";
+                btn.innerText = "Stop Jamming Simulation";
+                wave.innerHTML = `
+                    <div class="w-2 bg-red-500 h-16 animate-ping"></div>
+                    <div class="w-2 bg-red-500 h-16 animate-ping"></div>
+                    <div class="w-2 bg-red-500 h-16 animate-ping"></div>
+                    <div class="w-2 bg-red-500 h-16 animate-ping"></div>
+                    <div class="w-2 bg-red-500 h-16 animate-ping"></div>
+                `;
+            } else {
+                status.className = "px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400";
+                status.innerText = "Signal Clean";
+                btn.innerText = "Simulate RF Jamming Attack ⚡";
+                wave.innerHTML = `
+                    <div class="w-2 bg-purple-500 h-8 animate-pulse"></div>
+                    <div class="w-2 bg-purple-500 h-12 animate-pulse"></div>
+                    <div class="w-2 bg-purple-500 h-6 animate-pulse"></div>
+                    <div class="w-2 bg-purple-500 h-14 animate-pulse"></div>
+                    <div class="w-2 bg-purple-500 h-10 animate-pulse"></div>
+                `;
+            }
+        }
+
+        function simulateTransformerFault() {
+            const status = document.getElementById('transPowerStatus');
+            const temp = document.getElementById('tempVal');
+            
+            temp.innerHTML = `<span class="text-red-400">98°C OVERHEAT</span>`;
+            status.className = "px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-500/20 text-red-400 animate-bounce";
+            status.innerText = "⚡ POWER AUTOMATICALLY DISCONNECTED (SAFE)";
+        }
+
+        let currentWeight = 12;
+        function addWeight(val) {
+            currentWeight += val;
+            const wVal = document.getElementById('weightVal');
+            const wBar = document.getElementById('weightBar');
+            const lStatus = document.getElementById('lorryStatus');
+
+            wVal.innerText = currentWeight + " Tons";
+            let pct = Math.min((currentWeight / 20) * 100, 100);
+            wBar.style.width = pct + "%";
+
+            if (currentWeight > 20) {
+                wBar.className = "h-full bg-red-500 rounded-full transition-all duration-500";
+                lStatus.className = "px-2.5 py-0.5 rounded-full text-xs font-semibold bg-red-500/20 text-red-400 animate-bounce";
+                lStatus.innerText = "🚨 ALARM: OVERLOADED!";
+            }
+        }
+
+        function resetWeight() {
+            currentWeight = 12;
+            document.getElementById('weightVal').innerText = "12 Tons";
+            const wBar = document.getElementById('weightBar');
+            wBar.style.width = "60%";
+            wBar.className = "h-full bg-emerald-500 rounded-full transition-all duration-500";
+            const lStatus = document.getElementById('lorryStatus');
+            lStatus.className = "px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-400";
+            lStatus.innerText = "Safe Weight";
+        }
+    </script>
+</body>
+</html>
